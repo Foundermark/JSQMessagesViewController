@@ -289,6 +289,7 @@ JSQMessagesKeyboardControllerDelegate>
     }
 
     [self jsq_updateKeyboardTriggerPoint];
+    [self.keyboardController beginListeningForKeyboard];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -296,7 +297,6 @@ JSQMessagesKeyboardControllerDelegate>
     [super viewDidAppear:animated];
     [self jsq_addObservers];
     [self jsq_addActionToInteractivePopGestureRecognizer:YES];
-    [self.keyboardController beginListeningForKeyboard];
 
     if ([UIDevice jsq_isCurrentDeviceBeforeiOS8]) {
         [self.snapshotView removeFromSuperview];
